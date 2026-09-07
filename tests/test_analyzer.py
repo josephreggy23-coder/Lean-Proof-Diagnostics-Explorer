@@ -1,4 +1,7 @@
 import unittest
+import json
+import subprocess
+import sys
 
 from proof_diagnostics.analyzer import analyze, classify_diagnostic, render_markdown
 
@@ -27,3 +30,10 @@ class AnalyzerTests(unittest.TestCase):
     def test_report_includes_category_table(self):
         report = render_markdown(analyze([]))
         self.assertIn("No rejected attempts", report)
+
+    def test_cli_can_emit_machine_readable_json(self):
+        completed = subprocess.run(
+            [sys.executable, "-m", "proof_diagnostics", "examples/real_run.jsonl", "--format", "json"],
+            text=True, capture_output=True, check=True,
+        )
+        self.assertEqual(json.loads(completed.stdout)["eventual_successes"], 1)
