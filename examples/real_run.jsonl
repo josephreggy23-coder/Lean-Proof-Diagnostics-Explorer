@@ -1,0 +1,1 @@
+{"item_id":"nat_add_zero","phase":"manual_baseline","round":0,"accepted":true,"diagnostics":"","source":"import Mathlib\n\nexample (n : ℕ) : n + 0 = n := by\n  omega","verification_environment":"Lean Web: Latest Mathlib with Lean v4.34.0-rc2","verification_date":"2026-09-07"}

@@ -1,5 +1,0 @@
-{"item_id":"nat_add_zero","phase":"formalize","round":0,"accepted":true,"diagnostics":"","elapsed_seconds":0.11}
-{"item_id":"even_square","phase":"formalize","round":0,"accepted":false,"diagnostics":"error: unknown tactic 'omega'","elapsed_seconds":0.14}
-{"item_id":"even_square","phase":"repair","round":1,"accepted":true,"diagnostics":"","elapsed_seconds":0.15}
-{"item_id":"subset_refl","phase":"formalize","round":0,"accepted":false,"diagnostics":"error: type mismatch\n  hx\nhas type x ∈ s but is expected to have type True","elapsed_seconds":0.12}
-{"item_id":"subset_refl","phase":"repair","round":1,"accepted":false,"diagnostics":"error: unsolved goals","elapsed_seconds":0.13}

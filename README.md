@@ -48,13 +48,13 @@ You can inspect, extend, or version every mapping in `analyzer.py`.
 git clone https://github.com/josephreggy23-coder/Lean-Proof-Diagnostics-Explorer.git
 cd Lean-Proof-Diagnostics-Explorer
 python -m pip install -e .
-python -m proof_diagnostics examples/sample_attempts.jsonl
+python -m proof_diagnostics examples/real_run.jsonl
 ```
 
 Write the report to a file:
 
 ```powershell
-python -m proof_diagnostics examples/sample_attempts.jsonl --output artifacts/report.md
+python -m proof_diagnostics examples/real_run.jsonl --output artifacts/report.md
 ```
 
 Run tests:
@@ -65,10 +65,12 @@ python -m unittest discover -s tests -v
 
 ## Example output
 
-The included synthetic fixture contains 3 theorems and 5 attempts. Its report
-shows 33.3% first-pass success, 66.7% eventual success, and one proof recovered
-through repair. These numbers demonstrate the tool only; they are **not model
-results**.
+The included real baseline is a Lean-Web-checked theorem:
+`example (n : ℕ) : n + 0 = n := by omega`. It has one accepted attempt and is
+explicitly marked `manual_baseline`, because no language model generated it.
+See [`examples/REAL_EXAMPLE.md`](examples/REAL_EXAMPLE.md) for its exact source,
+verification environment, and provenance. Bring your own LLM experiment JSONL
+to obtain repair statistics; this project never fabricates them.
 
 ## Design principles
 
