@@ -57,6 +57,12 @@ Write the report to a file:
 python -m proof_diagnostics examples/real_run.jsonl --output artifacts/report.md
 ```
 
+To inspect both the accepted theorem and a real, controlled Lean rejection:
+
+```powershell
+python -m proof_diagnostics examples/real_controlled_attempts.jsonl
+```
+
 Run tests:
 
 ```powershell

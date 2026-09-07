@@ -17,3 +17,16 @@ example (n : ℕ) : n + 0 = n := by
 no language model generated this source, and no timing was recorded by the web
 editor. The record demonstrates the exact input format expected by the
 diagnostics tool without inventing model behavior or error messages.
+
+## Controlled negative check
+
+[`invalid_rfl.lean`](invalid_rfl.lean) is a deliberately invalid theorem checked
+in the same environment. Lean emitted this genuine diagnostic:
+
+> Tactic `rfl` failed: the left-hand side `n + 1` is not definitionally equal
+> to the right-hand side `n`.
+
+[`real_controlled_attempts.jsonl`](real_controlled_attempts.jsonl) combines both
+real checks. It gives the analyzer one accepted theorem and one genuine rejected
+attempt. This is still **not an LLM benchmark**: `controlled_negative` means a
+human intentionally supplied a wrong proof to test diagnostic handling.
