@@ -55,6 +55,7 @@ def analyze(attempts: Iterable[dict[str, Any]]) -> dict[str, Any]:
 
     failure_counts: Counter[str] = Counter()
     phase_counts: Counter[str] = Counter()
+    outcome_counts: Counter[str] = Counter()
     first_pass = repaired = eventual = 0
     total_seconds = 0.0
     attempts_count = 0
@@ -64,6 +65,7 @@ def analyze(attempts: Iterable[dict[str, Any]]) -> dict[str, Any]:
         total_seconds += sum(float(row.get("elapsed_seconds", 0.0)) for row in records)
         accepted = any(row["accepted"] for row in records)
         first_accepted = records[0]["accepted"]
+        outcome_counts["first_pass" if first_accepted else "repaired" if accepted else "unresolved"] += 1
         eventual += int(accepted)
         first_pass += int(first_accepted)
         repaired += int(accepted and not first_accepted)
@@ -83,6 +85,7 @@ def analyze(attempts: Iterable[dict[str, Any]]) -> dict[str, Any]:
         "mean_attempts_per_example": attempts_count / examples if examples else 0.0,
         "verification_seconds": total_seconds,
         "phase_counts": dict(sorted(phase_counts.items())),
+        "example_outcomes": dict(sorted(outcome_counts.items())),
         "failure_categories": dict(sorted(failure_counts.items())),
     }
 
@@ -114,4 +117,7 @@ def render_markdown(summary: dict[str, Any], title: str = "Lean proof diagnostic
         lines.extend(f"| `{phase}` | {count} |" for phase, count in phases.items())
     else:
         lines.append("| _No attempts_ | 0 |")
+    lines.extend(["", "## Example outcomes", "", "| Outcome | Examples |", "| --- | ---: |"])
+    for outcome, count in summary["example_outcomes"].items():
+        lines.append(f"| `{outcome}` | {count} |")
     return "\n".join(lines) + "\n"

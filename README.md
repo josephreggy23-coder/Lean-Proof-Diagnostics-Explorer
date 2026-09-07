@@ -12,6 +12,7 @@ Markdown report.
 - How many examples passed on the first try versus after repair?
 - Which Lean failure modes were most common?
 - Did iterative repair yield additional verified proofs?
+- Which examples passed immediately, were repaired, or remain unresolved?
 - How many verifier calls and how much checking time did an experiment require?
 - Which attempt phases (formalization, repair, or manual baseline) produced the artifacts?
 

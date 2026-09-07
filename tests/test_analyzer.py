@@ -27,6 +27,7 @@ class AnalyzerTests(unittest.TestCase):
         self.assertEqual(summary["repaired_successes"], 1)
         self.assertEqual(summary["failure_categories"], {"type_mismatch": 1})
         self.assertEqual(summary["phase_counts"], {"unspecified": 3})
+        self.assertEqual(summary["example_outcomes"], {"first_pass": 1, "repaired": 1})
 
     def test_report_includes_category_table(self):
         report = render_markdown(analyze([]))
