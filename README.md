@@ -26,7 +26,9 @@ autoformalization project:
 ```
 
 Only `item_id` and `accepted` are required. Missing optional fields are handled
-gracefully, so old experiment logs remain usable.
+gracefully, so old experiment logs remain usable. When present, `round` and
+`elapsed_seconds` must be non-negative; malformed measurements are rejected
+instead of silently distorting a report.
 
 ## Failure taxonomy
 

@@ -41,6 +41,10 @@ def load_attempts(path: str | Path) -> list[dict[str, Any]]:
             raise ValueError(f"line {line_number}: missing {sorted(missing)}")
         if not isinstance(record["accepted"], bool):
             raise ValueError(f"line {line_number}: accepted must be boolean")
+        if "round" in record and (not isinstance(record["round"], int) or record["round"] < 0):
+            raise ValueError(f"line {line_number}: round must be a non-negative integer")
+        if "elapsed_seconds" in record and float(record["elapsed_seconds"]) < 0:
+            raise ValueError(f"line {line_number}: elapsed_seconds must be non-negative")
         attempts.append(record)
     return attempts
 
