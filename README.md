@@ -13,6 +13,7 @@ Markdown report.
 - Which Lean failure modes were most common?
 - Did iterative repair yield additional verified proofs?
 - How many verifier calls and how much checking time did an experiment require?
+- Which attempt phases (formalization, repair, or manual baseline) produced the artifacts?
 
 ## Input contract
 
