@@ -32,6 +32,7 @@ gracefully, so old experiment logs remain usable.
 | --- | --- |
 | `unknown_identifier` | unknown identifier / unknown constant |
 | `unknown_tactic` | unknown tactic |
+| `tactic_failure` | a recognized tactic failed to close the goal |
 | `type_mismatch` | type mismatch / application type mismatch |
 | `unsolved_goals` | unsolved goals / goals accomplished? |
 | `parser_error` | unexpected token / failed to parse |

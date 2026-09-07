@@ -6,6 +6,10 @@ from proof_diagnostics.analyzer import analyze, classify_diagnostic, render_mark
 class AnalyzerTests(unittest.TestCase):
     def test_classifier_covers_known_and_unknown_diagnostics(self):
         self.assertEqual(classify_diagnostic("error: unknown tactic 'foo'"), "unknown_tactic")
+        self.assertEqual(
+            classify_diagnostic("Tactic ` rfl ` failed: terms are not definitionally equal"),
+            "tactic_failure",
+        )
         self.assertEqual(classify_diagnostic("something novel"), "other")
 
     def test_summary_is_example_level_and_counts_repair_gain(self):

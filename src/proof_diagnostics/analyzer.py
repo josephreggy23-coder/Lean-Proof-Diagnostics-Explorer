@@ -12,6 +12,7 @@ RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("placeholder_proof", ("sorry", "admit")),
     ("timeout", ("timed out", "maximum heartbeats", "maximum recursion depth")),
     ("unknown_tactic", ("unknown tactic",)),
+    ("tactic_failure", ("tactic `", "tactic failed")),
     ("unknown_identifier", ("unknown identifier", "unknown constant")),
     ("type_mismatch", ("type mismatch", "application type mismatch")),
     ("unsolved_goals", ("unsolved goals", "goals accomplished")),
