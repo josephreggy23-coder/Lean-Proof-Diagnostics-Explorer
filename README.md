@@ -74,6 +74,13 @@ Request the same summary as machine-readable JSON for plotting or a notebook:
 python -m proof_diagnostics examples/real_controlled_attempts.jsonl --format json
 ```
 
+Use the quality gate in CI or a data-cleaning pass to surface diagnostics that
+need a deliberate taxonomy decision:
+
+```powershell
+python -m proof_diagnostics artifacts/attempts.jsonl --fail-on-other
+```
+
 Run tests:
 
 ```powershell

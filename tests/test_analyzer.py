@@ -48,3 +48,14 @@ class AnalyzerTests(unittest.TestCase):
             path.write_text('{"item_id":"x","accepted":false,"round":-1}\n', encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "round"):
                 load_attempts(path)
+
+    def test_cli_quality_gate_flags_uncategorized_diagnostics(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "unknown.jsonl"
+            path.write_text('{"item_id":"x","accepted":false,"diagnostics":"new diagnostic"}\n', encoding="utf-8")
+            completed = subprocess.run(
+                [sys.executable, "-m", "proof_diagnostics", str(path), "--fail-on-other"],
+                text=True, capture_output=True,
+            )
+        self.assertEqual(completed.returncode, 1)
+        self.assertIn("`other`", completed.stdout)

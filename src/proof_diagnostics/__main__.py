@@ -15,6 +15,10 @@ def main() -> int:
     parser.add_argument("--output", type=Path, help="write the selected report format to this path")
     parser.add_argument("--title", default="Lean proof diagnostics report")
     parser.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    parser.add_argument(
+        "--fail-on-other", action="store_true",
+        help="exit with status 1 when an uncategorized rejected diagnostic is present",
+    )
     args = parser.parse_args()
     summary = analyze(load_attempts(args.input))
     report = (
@@ -27,7 +31,7 @@ def main() -> int:
         args.output.write_text(report, encoding="utf-8")
     else:
         print(report, end="")
-    return 0
+    return 1 if args.fail_on_other and summary["failure_categories"].get("other", 0) else 0
 
 
 if __name__ == "__main__":
