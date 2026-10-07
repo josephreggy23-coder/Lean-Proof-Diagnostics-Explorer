@@ -11,3 +11,5 @@ Thumbs.db
 artifacts/
 .idea/
 .vscode/
+build/
+dist/
