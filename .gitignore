@@ -13,3 +13,4 @@ artifacts/
 .vscode/
 build/
 dist/
+.ruff_cache/
