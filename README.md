@@ -49,6 +49,9 @@ You can inspect, extend, or version every mapping in `analyzer.py`.
 
 ## Quick start
 
+Requires Python 3.10 or newer; there are no third-party dependencies. The
+commands below work unchanged in PowerShell, bash, and zsh.
+
 ```powershell
 git clone https://github.com/josephreggy23-coder/Lean-Proof-Diagnostics-Explorer.git
 cd Lean-Proof-Diagnostics-Explorer
