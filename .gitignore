@@ -16,3 +16,5 @@ dist/
 .ruff_cache/
 .env
 .env.*
+venv/
+coverage.xml
