@@ -38,9 +38,9 @@ instead of silently distorting a report.
 | `unknown_tactic` | unknown tactic |
 | `tactic_failure` | a recognized tactic failed to close the goal |
 | `type_mismatch` | type mismatch / application type mismatch |
-| `unsolved_goals` | unsolved goals / goals accomplished? |
-| `parser_error` | unexpected token / failed to parse |
-| `timeout` | timed out / maximum heartbeats |
+| `unsolved_goals` | unsolved goals / goals accomplished |
+| `parser_error` | unexpected token / failed to parse / invalid syntax |
+| `timeout` | timed out / maximum heartbeats / maximum recursion depth |
 | `placeholder_proof` | `sorry` / `admit` |
 | `other` | Any unmatched diagnostic |
 
