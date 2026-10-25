@@ -18,3 +18,5 @@ dist/
 .env.*
 venv/
 coverage.xml
+.lake/
+*.olean
