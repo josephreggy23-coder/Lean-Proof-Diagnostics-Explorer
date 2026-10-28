@@ -73,6 +73,12 @@ To inspect both the accepted theorem and a real, controlled Lean rejection:
 python -m proof_diagnostics examples/real_controlled_attempts.jsonl
 ```
 
+Set a custom report heading with `--title`:
+
+```powershell
+python -m proof_diagnostics examples/real_run.jsonl --title "Baseline run diagnostics"
+```
+
 Request the same summary as machine-readable JSON for plotting or a notebook:
 
 ```powershell
