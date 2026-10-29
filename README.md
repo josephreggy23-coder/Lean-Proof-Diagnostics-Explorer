@@ -59,6 +59,8 @@ python -m pip install -e .
 python -m proof_diagnostics examples/real_run.jsonl
 ```
 
+List every option with `python -m proof_diagnostics --help`.
+
 Write the report to a file:
 
 ```powershell
