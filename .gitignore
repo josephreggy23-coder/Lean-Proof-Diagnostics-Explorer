@@ -20,3 +20,5 @@ venv/
 coverage.xml
 .lake/
 *.olean
+*.log
+*.swp
