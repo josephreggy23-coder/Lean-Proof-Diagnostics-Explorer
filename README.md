@@ -100,6 +100,12 @@ Run tests:
 python -m unittest discover -s tests -v
 ```
 
+The suite also runs under pytest if it is installed:
+
+```powershell
+python -m pytest
+```
+
 ## Example output
 
 The included real baseline is a Lean-Web-checked theorem:
