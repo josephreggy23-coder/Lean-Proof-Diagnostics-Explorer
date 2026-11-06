@@ -9,6 +9,7 @@ from proof_diagnostics.analyzer import analyze, classify_diagnostic, load_attemp
 
 
 class AnalyzerTests(unittest.TestCase):
+    """Tests for diagnostic classification, summaries, and the CLI."""
     def test_classifier_covers_known_and_unknown_diagnostics(self):
         self.assertEqual(classify_diagnostic("error: unknown tactic 'foo'"), "unknown_tactic")
         self.assertEqual(
