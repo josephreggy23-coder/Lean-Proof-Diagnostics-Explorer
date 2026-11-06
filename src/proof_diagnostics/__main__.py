@@ -10,6 +10,7 @@ from .analyzer import analyze, load_attempts, render_markdown
 
 
 def main() -> int:
+    """Render a diagnostics report from a JSONL file and return the process exit code."""
     parser = argparse.ArgumentParser(description="Analyze Lean proof-attempt JSONL artifacts.")
     parser.add_argument("input", help="path to JSONL attempt records")
     parser.add_argument("--output", type=Path, help="write the selected report format to this path")
