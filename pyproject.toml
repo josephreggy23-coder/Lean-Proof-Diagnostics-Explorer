@@ -9,6 +9,10 @@ description = "Transparent analysis of Lean proof-attempt diagnostics."
 readme = "README.md"
 requires-python = ">=3.10"
 
+[project.urls]
+Repository = "https://github.com/josephreggy23-coder/Lean-Proof-Diagnostics-Explorer"
+Issues = "https://github.com/josephreggy23-coder/Lean-Proof-Diagnostics-Explorer/issues"
+
 [tool.setuptools]
 package-dir = {"" = "src"}
 
