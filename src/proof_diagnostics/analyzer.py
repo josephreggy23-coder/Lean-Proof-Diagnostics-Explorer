@@ -97,6 +97,7 @@ def analyze(attempts: Iterable[dict[str, Any]]) -> dict[str, Any]:
 def render_markdown(summary: dict[str, Any], title: str = "Lean proof diagnostics report") -> str:
     """Render a dependency-free report suitable for committing beside an experiment."""
     def percent(value: float) -> str:
+        """Format a 0-1 fraction as a percentage with one decimal place."""
         return f"{value * 100:.1f}%"
 
     lines = [
