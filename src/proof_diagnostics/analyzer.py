@@ -2,11 +2,10 @@
 
 from __future__ import annotations
 
+import json
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Iterable
-import json
-
 
 RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("placeholder_proof", ("sorry", "admit")),
