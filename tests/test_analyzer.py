@@ -1,11 +1,16 @@
-import unittest
 import json
 import subprocess
 import sys
 import tempfile
+import unittest
 from pathlib import Path
 
-from proof_diagnostics.analyzer import analyze, classify_diagnostic, load_attempts, render_markdown
+from proof_diagnostics.analyzer import (
+    analyze,
+    classify_diagnostic,
+    load_attempts,
+    render_markdown,
+)
 
 
 class AnalyzerTests(unittest.TestCase):
