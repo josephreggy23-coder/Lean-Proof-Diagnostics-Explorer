@@ -44,6 +44,10 @@ instead of silently distorting a report.
 | `placeholder_proof` | `sorry` / `admit` |
 | `other` | Any unmatched diagnostic |
 
+Signals are matched as case-insensitive substrings, and rules are checked in the
+order shown in `analyzer.py`, so the first matching category wins (for example,
+a diagnostic mentioning `sorry` is always `placeholder_proof`).
+
 The classifier is deliberately rule-based and transparent—not an LLM labeler.
 You can inspect, extend, or version every mapping in `analyzer.py`.
 
