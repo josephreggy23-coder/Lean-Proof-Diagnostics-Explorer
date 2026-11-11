@@ -94,6 +94,9 @@ need a deliberate taxonomy decision:
 python -m proof_diagnostics artifacts/attempts.jsonl --fail-on-other
 ```
 
+The report is still written, but the command exits with status 1 if any rejected
+attempt falls into the `other` category, and 0 otherwise.
+
 Run tests:
 
 ```powershell
